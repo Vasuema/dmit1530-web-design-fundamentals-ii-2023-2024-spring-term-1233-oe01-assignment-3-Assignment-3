@@ -1,0 +1,22 @@
+:root {
+    /** colours **/
+    --yellow:           #FED766; 
+    --lt-seafoam-green: #ecf9f6;
+    --seafoam-green:    #43C6AC;
+    --md-blue:          #191654;
+    --dk-blue:          #0C0B2A;
+    --blue-grey:        #6B717E;
+
+    /** typography **/
+    --headings:'Monoton', cursive;
+    --body: 'Rubik', sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    top: 0;
+    left: -9999999px;
+    width: 0.1rem;
+    height: 0.1rem;
+    visibility: hidden;
+}
