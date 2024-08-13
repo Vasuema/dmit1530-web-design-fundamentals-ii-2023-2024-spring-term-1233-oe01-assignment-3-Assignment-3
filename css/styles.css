@@ -27,7 +27,26 @@ body {
   font-size: 2rem;
   background-color: var(--white);
 }
-
+.nav-links-search a:hover {
+  text-decoration: underline;
+}
+button:hover {
+  cursor: pointer;
+}
+.h1-div button:first-of-type:hover {
+  background-color: transparent;
+  border: solid var(--green);
+  color: var(--green);
+}
+.h1-div button:last-of-type:hover {
+  background-color: var(--green);
+  border: none;
+  color: var(--dk-blue);
+}
+footer button:hover {
+  background-color: var(--dk-blue) !important;
+  color: var(--green);
+}
 .nav-links-search a {
   text-decoration: none;
   color: var(--dk-blue);
@@ -361,7 +380,7 @@ h1,
     width: 100vw;
   }
   body {
-    width: 90%;
+    width: 100%;
   }
   nav {
     display: flex;
@@ -549,7 +568,7 @@ h1,
     color: var(--white);
   }
   .socials svg {
-    fill: var(--white);
+    color: var(--white) !important;
   }
   .below-footer {
     padding-top: 1rem;
@@ -562,10 +581,8 @@ h1,
     margin-left: 2rem;
     color: var(--white);
   }
-  .socials {
-    order: 2;
-  }
-  .privacy {
-    order: 1;
-  }
+}
+.sec-button button:hover {
+  background-color: var(--dk-blue);
+  color: var(--white) !important;
 }
