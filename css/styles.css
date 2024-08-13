@@ -1,22 +1,571 @@
 :root {
-    /** colours **/
-    --yellow:           #FED766; 
-    --lt-seafoam-green: #ecf9f6;
-    --seafoam-green:    #43C6AC;
-    --md-blue:          #191654;
-    --dk-blue:          #0C0B2A;
-    --blue-grey:        #6B717E;
+  /** colours **/
+  --yellow: #fed766;
+  --white: #ecf9f6;
+  --lt-green: #ecf9f6;
+  --green: #43c6ac;
+  --dk-blue: #191654;
+  --dk-dk-blue: #0c0b2a;
+  --blue-grey: #6b717e;
 
-    /** typography **/
-    --headings:'Monoton', cursive;
-    --body: 'Rubik', sans-serif;
+  /** typography **/
+  --headings: "Monoton", cursive;
+  --body: "Rubik", sans-serif;
 }
 
 .sr-only {
+  position: absolute;
+  top: 0;
+  left: -9999999px;
+  width: 0.1rem;
+  height: 0.1rem;
+  visibility: hidden;
+}
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  background-color: var(--white);
+}
+
+.nav-links-search a {
+  text-decoration: none;
+  color: var(--dk-blue);
+  text-transform: uppercase;
+}
+nav {
+  background-color: var(--lt-green);
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+svg {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 6rem;
+  font-family: var(--headings);
+  font-weight: 400;
+}
+h2 {
+  font-family: var(--headings);
+  font-weight: 400;
+  color: var(--dk-dk-blue);
+  text-transform: uppercase;
+  font-size: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5rem solid var(--green);
+}
+h3 {
+  font-family: var(--headings);
+  font-weight: 400;
+}
+main button {
+  text-transform: uppercase;
+  padding: 0.75rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+main button:nth-child(3) {
+  background-color: var(--green);
+  border: none;
+  color: var(--dk-blue);
+}
+main button:nth-child(4) {
+  background-color: transparent;
+  border: solid 2px;
+  color: var(--green);
+}
+main button:hover {
+  cursor: pointer;
+}
+.h1-div {
+  background: rgb(25, 22, 84);
+  background: linear-gradient(
+    40deg,
+    rgba(25, 22, 84, 1) 0%,
+    rgba(67, 203, 172, 1) 65%
+  );
+  padding: 8rem 1rem 8rem 4rem;
+}
+h1,
+.h1-div p {
+  color: var(--white);
+  width: 60%;
+  padding-bottom: 1rem;
+}
+.our-work {
+  padding: 4rem;
+}
+.sec-button button {
+  background-color: transparent;
+  border-color: var(--dk-dk-blue);
+}
+.our-work p {
+  padding-top: 3rem;
+  width: 60%;
+  margin-bottom: 2rem;
+  color: var(--dk-dk-blue);
+}
+.card {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+.card a {
+  font-size: 1.25rem;
+  padding: 1rem;
+  text-decoration: none;
+  min-height: 7%;
+}
+.link-blue a {
+  background-color: var(--dk-blue);
+  color: var(--lt-green);
+}
+.link-green a {
+  background-color: var(--green);
+  color: var(--dk-blue);
+}
+.card > img {
+  min-height: 85%;
+}
+
+.what-we.do h2 {
+  color: var(--dk-blue);
+}
+.what-we-do p {
+  color: var(--dk-dk-blue);
+}
+.who-we-are {
+  background-color: var(--green);
+  padding: 2rem;
+}
+
+.footer {
+  background-color: var(--dk-blue);
+  color: var(--white);
+}
+
+.below-footer {
+  background-color: var(--dk-dk-blue);
+  width: 100%;
+}
+.do-card {
+  margin-bottom: 6rem;
+}
+
+@media screen and (min-width: 1160px) {
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  nav img {
+    width: 15rem;
+    height: 50%;
+    margin: 1rem;
+  }
+  .nav-links-search li {
+    display: inline-flex;
+    text-decoration: none;
+  }
+
+  .nav-links-search input {
+    max-height: 2rem;
+    margin: 3rem 1rem 0 2rem;
+    border-radius: 5px;
+  }
+  .nav-links-search {
+    display: flex;
+    justify-content: baseline;
+  }
+  .nav-links-search a {
+    margin-left: 2rem;
+    font-size: 1.75rem;
+    margin-top: 1rem;
+  }
+  .menu {
+    display: none;
+  }
+  .our-work h2 {
+    width: 35%;
+  }
+  .horizontal-scroll {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 0;
+  }
+  .sec-button h2 {
+    border-bottom: var(--green);
+  }
+  .sec-button:nth-child(3) button {
+    display: flex;
+    margin-left: auto;
+    margin-right: 4rem;
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    color: var(--dk-blue) !important;
+    font-size: 1.25rem;
+  }
+  .we-do-service-block {
+    font-size: 1.5rem;
+    margin-left: 4rem;
+    margin-right: 8rem;
+    margin-top: 3rem;
+  }
+  .we-do-service-block h2 {
+    white-space: nowrap;
+  }
+  .we-do-service-block p {
+    margin-top: 2rem;
+  }
+  .we-do-service-block button {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+  .all-cards {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2rem;
+    margin-right: 4rem;
+    margin-top: 4rem;
+  }
+  .what-we-do {
+    display: grid;
+    grid-template-columns: 50% auto;
+  }
+  .all-cards img {
+    border-radius: 1rem;
+    width: 95%;
+    height: 60%;
+    margin-bottom: 1rem;
+  }
+  .all-cards h3 {
+    text-transform: capitalize;
+    color: var(--green);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .do-card-second {
+    height: 40rem;
+  }
+  .who-we-are {
+    background-color: var(--green);
+    padding: 6rem 4rem 10rem 4rem;
+    display: grid;
+    grid-template-columns: 50% auto;
+  }
+  .who-we-are button {
+    border: solid var(--dk-blue);
+    background-color: transparent;
     position: absolute;
-    top: 0;
-    left: -9999999px;
-    width: 0.1rem;
-    height: 0.1rem;
-    visibility: hidden;
+    right: 10rem;
+    left: auto;
+    width: 32%;
+  }
+  .who-we-are-green h2 {
+    border-bottom: var(--lt-green) !important;
+  }
+  .who-we-are-green h2,
+  .who-we-are-green p {
+    width: 100%;
+    margin: 0;
+  }
+  .who-we-are img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 4rem;
+  }
+
+  .footer {
+    padding: 4rem;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 60% auto;
+  }
+  .subscribe {
+    display: flex;
+    justify-content: baseline;
+    min-height: 4rem;
+    margin-top: 2rem;
+  }
+  .subscribe button {
+    border-radius: 0 0.5rem 0.5rem 0;
+    max-height: 3.3rem;
+    min-width: 40%;
+    text-transform: uppercase;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--dk-blue);
+    background-color: var(--green);
+  }
+  .subscribe input {
+    border-radius: 0.5rem 0 0 0.5rem;
+    height: 3rem;
+    border: none;
+    width: 100%;
+  }
+  .footer-section h3 {
+    margin-top: 0;
+    color: var(--lt-green);
+    font-size: 3rem;
+  }
+
+  .footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 2rem;
+  }
+
+  .below-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .below-footer svg {
+    fill: var(--white);
+  }
+  .socials svg {
+    margin-right: 3rem;
+  }
+  .below-footer p {
+    color: var(--white);
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    margin-left: 4rem;
+  }
+  .below-footer a {
+    color: var(--white);
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .horizontal-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    width: 100vw;
+  }
+  body {
+    width: 90%;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+  nav img {
+    width: 10rem;
+    margin: 1rem;
+  }
+  nav > button {
+    background-color: var(--lt-green);
+    border: none;
+    position: absolute;
+    right: 2rem;
+    left: auto;
+    top: 1rem;
+  }
+  .h1-div {
+    width: 100%;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+  h2 {
+    font-size: 2.75rem;
+  }
+  .nav-links-search li {
+    display: block;
+    text-decoration: none;
+    line-height: 3rem;
+    border-bottom: solid var(--green);
+  }
+  .nav-links-search input {
+    height: 2rem;
+    margin: 1.5rem 1rem 1rem 2rem;
+    border-radius: 5px;
+    width: 90%;
+  }
+  .nav-links-search {
+    display: block;
+  }
+  .nav-links-search a {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+  .nav-links-search li:hover {
+    background-color: var(--green);
+  }
+  .nav-links-search {
+    display: none;
+  }
+  .show-nav {
+    display: block;
+  }
+  .remove-flex {
+    display: block;
+  }
+
+  .card a {
+    font-size: 1rem;
+  }
+  .card {
+    min-height: 20rem;
+    max-height: 20rem;
+    min-width: 20rem;
+    max-width: 20rem;
+  }
+  .sec-button h2 {
+    border-bottom: var(--green);
+  }
+  .sec-button:nth-child(3) button {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    color: var(--dk-blue) !important;
+    font-size: 1.25rem;
+    width: 90%;
+  }
+
+  .we-do-service-block {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .we-do-service-block h2 {
+    white-space: nowrap;
+  }
+  .we-do-service-block p {
+    margin-top: 2rem;
+  }
+  .we-do-service-block button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100% !important;
+  }
+
+  .all-cards {
+    display: grid;
+    grid-template-columns: auto;
+    width: 90%;
+    grid-template-columns: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .all-cards img {
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .all-cards h3 {
+    text-transform: capitalize;
+    color: var(--green);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .do-card-second {
+    height: 40rem;
+    margin-bottom: 0;
+  }
+  .who-we-are {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .who-we-are img {
+    width: 100%;
+    order: 3;
+  }
+  .who-we-are-green p {
+    width: 100%;
+  }
+  .green-h2 {
+    border-bottom: solid var(--lt-green);
+  }
+  .who-we-are button {
+    background-color: transparent;
+    order: 2;
+  }
+  .who-we-are-green {
+    order: 1;
+  }
+  .footer {
+    padding: 6rem 2rem 6rem 2rem;
+    width: 100%;
+  }
+  .below-footer {
+    width: 100% !important;
+  }
+  .footer h3 {
+    margin-bottom: 2rem;
+  }
+  .footer p {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  .footer input {
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  .footer button {
+    width: 100%;
+    height: 4rem;
+    padding: auto;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--green);
+    color: var(--dk-blue);
+    font-size: 1.5rem;
+  }
+  .privacy a {
+    text-decoration: none;
+    color: var(--white);
+  }
+  .socials svg {
+    fill: var(--white);
+  }
+  .below-footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .socials,
+  .privacy {
+    width: 100%;
+    text-align: left;
+    margin-left: 2rem;
+    color: var(--white);
+  }
+  .socials {
+    order: 2;
+  }
+  .privacy {
+    order: 1;
+  }
 }
